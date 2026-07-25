@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Task documents: Full read/write for all authenticated project members
+    match /tasks/{taskId} {
+      allow read: true;
+      allow create: true;
+      allow update: true;
+      allow delete: true;
+    }
+
+    // Presence documents: Full read/write for real-time collaborator tracking
+    match /presence/{presenceId} {
+      allow read: true;
+      allow write: true;
+    }
+
+    // Activity audit log: Full read/write for time-ordered edit tracking
+    match /activities/{activityId} {
+      allow read: true;
+      allow write: true;
+    }
+
+    // Project documents: Full read/write
+    match /projects/{projectId} {
+      allow read: true;
+      allow write: true;
+    }
+  }
+}
