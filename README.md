@@ -1,4 +1,9 @@
-# Aideation – Real‑time Collaborative Task Management
+# Aideation – Real-time Collaborative Task Management
+
+## About
+**Aideation** is a premium, real-time collaborative task management workspace engineered for enterprise teams. It features a zero-trust architecture, live synchronization, and robust concurrency control to ensure seamless team productivity.
+
+🌐 **Live Site:** [https://aideation-7gz259kdf-tejas-j-aradhyas-projects.vercel.app](https://aideation-7gz259kdf-tejas-j-aradhyas-projects.vercel.app)
 
 ## Project Overview
 Aideation is a **React + TypeScript** web application built with **Vite** that provides a secure, real‑time collaborative environment for employees to create, edit, and track project tasks. It uses **Firebase Firestore** for data persistence, **Firebase Authentication** with a zero‑trust blind login, and a presence‑based concurrency lock to guarantee that the same employee ID cannot edit the same project simultaneously.
