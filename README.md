@@ -14,15 +14,18 @@ Key goals:
 - **Real‑time sync** across tabs and devices using Firestore listeners.
 - **Secret protection** – `.env` files are ignored and never pushed.
 
-## 8‑Step Architecture
-1. **User Authentication (Blind Login)** – Users enter a randomly generated token; the client exchanges it for a Firebase custom token without ever revealing the employee ID.
-2. **Firestore Security Rules** – Rules grant read/write on `tasks`, `presence`, `activities`, and `projects` collections to every authenticated user, while preventing duplicate active sessions for the same EMPID.
-3. **Presence Service** – `usePresence` writes a temporary document under `presence/{empId}`; a Firestore TTL removes stale entries, enabling lock‑out of duplicate logins.
-4. **Realtime Document Hook** – `useRealtimeDocument` sets up a listener on a task document and merges incoming updates via `setDoc({ merge: true })` to avoid lost writes.
-5. **Task Sync Hook** – `useTaskSync` batches local edits and writes them atomically, ensuring all employees see the latest state instantly.
-6. **ID Sanitisation Layer** – All Firestore document IDs are slugified (spaces → `_`) to avoid path resolution errors.
-7. **Frontend UI** – Components (`CompanySelector`, `TaskCard`, `ActiveUsersModal`, etc.) consume the hooks, render with a premium glass‑morphism design, and enforce UI‑level checks for duplicate EMPIDs.
-8. **Deployment & CI** – The app is bundled with Vite, deployed to any static‑host (e.g., GitHub Pages, Firebase Hosting). CI runs Oxlint with type‑aware rules to keep code quality high.
+## 8-Step Architecture
+
+```mermaid
+graph TD
+    A["1. User Authentication (Blind Login)<br/>Client exchanges token securely"] --> B["2. Firestore Security Rules<br/>Validates read/write & prevents duplicate EMPID"]
+    B --> C["3. Presence Service<br/>Writes temp doc, TTL lock-out"]
+    C --> D["4. Realtime Document Hook<br/>Sets up listener & merges updates"]
+    D --> E["5. Task Sync Hook<br/>Batches local edits atomically"]
+    E --> F["6. ID Sanitisation Layer<br/>Slugifies IDs to avoid path errors"]
+    F --> G["7. Frontend UI<br/>Consumes hooks, premium glass-morphism"]
+    G --> H["8. Deployment & CI<br/>Vite bundled, static host, Oxlint CI"]
+```
 
 ## Features
 - Real‑time task creation, assignment, and status updates.
