@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Users, X, Building2, FolderGit2, Mail, CheckCircle2, LogOut } from 'lucide-react';
 import type { UserProfile } from '../hooks/usePresence';
 
@@ -61,9 +61,9 @@ export function ActiveUsersModal({ users, currentUser, onClose, onSwitchUser }: 
         <div className="my-5 space-y-3 max-h-80 overflow-y-auto pr-1">
           {users.map((user, idx) => {
             const isMe = user.id === currentUser?.id;
-            const initials = user.name
+            const initials = (user.name ?? '')
               .split(' ')
-              .map((n) => n[0])
+              .map((n) => n[0] || '')
               .join('')
               .toUpperCase()
               .substring(0, 2);

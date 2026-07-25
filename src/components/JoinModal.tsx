@@ -37,6 +37,7 @@ export function JoinModal({ onJoin }: JoinModalProps) {
     
     const profile: UserProfile = {
       id: stableId,
+      employeeId: stableId,
       companyName: companyName.trim(),
       projectName: projectName.trim(),
       name: name.trim(),

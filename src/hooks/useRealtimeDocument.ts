@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
-import { doc, onSnapshot, updateDoc, serverTimestamp, setDoc } from 'firebase/firestore';
+import { doc, onSnapshot, serverTimestamp, setDoc } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 
 export function useRealtimeDocument(collectionName: string, documentId: string) {
   const [data, setData] = useState<any>(null);
   const [error, setError] = useState<Error | null>(null);
-  const writeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const writeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const localDataRef = useRef<any>(null);
 
   useEffect(() => {

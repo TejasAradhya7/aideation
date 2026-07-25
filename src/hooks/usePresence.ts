@@ -9,7 +9,7 @@ export interface UserProfile {
   projectName: string;
   name: string;
   email: string;
-  role: 'Lead Architect' | 'Senior Software Engineer' | 'Frontend Engineer' | 'Backend Engineer' | 'Product Manager' | 'UI/UX Designer';
+  role: 'Lead Architect' | 'Senior Software Engineer' | 'Frontend Engineer' | 'Backend Engineer' | 'Product Manager' | 'UI/UX Designer' | 'Full-Stack Developer';
   lastActive?: number;
   activeTabsCount?: number;
 }

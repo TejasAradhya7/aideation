@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useRealtimeDocument } from './hooks/useRealtimeDocument';
 import { usePresence, type UserProfile } from './hooks/usePresence';
 import { useActivityFeed } from './hooks/useActivityFeed';
@@ -30,7 +30,7 @@ function App() {
     return saved ? JSON.parse(saved) : null;
   });
 
-  const { data } = useRealtimeDocument('projects', projectId);
+  useRealtimeDocument('projects', projectId);
   const activeUsersList = usePresence(currentUser);
   const { activities, logActivity } = useActivityFeed(currentUser);
 
