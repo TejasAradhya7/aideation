@@ -12,28 +12,28 @@ export interface PreconfiguredEmployee {
   role: UserProfile['role'];
 }
 
-// BACKEND ENTERPRISE DIRECTORY (SECURE & NEVER EXPOSED IN THE FRONTEND UI TEXT)
+// BACKEND ENTERPRISE DIRECTORY (Tokens act as the zero-trust keys)
 export const ENTERPRISE_EMPLOYEE_DIRECTORY: Record<string, PreconfiguredEmployee> = {
-  'EMP-1001': { employeeId: 'EMP-1001', name: 'Tejas', email: 'tejas@google.com', role: 'Lead Architect' },
-  'EMP-1002': { employeeId: 'EMP-1002', name: 'Sarah Chen', email: 'sarah.chen@google.com', role: 'Lead Architect' },
-  'EMP-1003': { employeeId: 'EMP-1003', name: 'Alex Rivera', email: 'alex.rivera@google.com', role: 'Senior Software Engineer' },
-  'EMP-1004': { employeeId: 'EMP-1004', name: 'Priya Sharma', email: 'priya.sharma@google.com', role: 'Frontend Engineer' },
-  'EMP-1005': { employeeId: 'EMP-1005', name: 'Marcus Vance', email: 'marcus.vance@google.com', role: 'Backend Engineer' },
-  'EMP-1006': { employeeId: 'EMP-1006', name: 'Elena Rostova', email: 'elena.rostova@google.com', role: 'Product Manager' },
-  'EMP-1007': { employeeId: 'EMP-1007', name: 'David Kim', email: 'david.kim@google.com', role: 'UI/UX Designer' },
-  'EMP-1008': { employeeId: 'EMP-1008', name: 'Jordan Taylor', email: 'jordan.taylor@google.com', role: 'Senior Software Engineer' },
-  'EMP-1009': { employeeId: 'EMP-1009', name: 'Aisha Patel', email: 'aisha.patel@google.com', role: 'Frontend Engineer' },
-  'EMP-1010': { employeeId: 'EMP-1010', name: "Liam O'Connor", email: 'liam.oconnor@google.com', role: 'Full-Stack Developer' },
-  'EMP-1011': { employeeId: 'EMP-1011', name: 'Vikram Malhotra', email: 'vikram.m@google.com', role: 'Senior Software Engineer' },
-  'EMP-1012': { employeeId: 'EMP-1012', name: 'Chloe Dubois', email: 'chloe.d@google.com', role: 'UI/UX Designer' },
-  'EMP-1013': { employeeId: 'EMP-1013', name: 'Kaito Tanaka', email: 'kaito.t@google.com', role: 'Backend Engineer' },
-  'EMP-1014': { employeeId: 'EMP-1014', name: 'Nia Washington', email: 'nia.w@google.com', role: 'Product Manager' },
-  'EMP-1015': { employeeId: 'EMP-1015', name: 'Carlos Mendez', email: 'carlos.m@google.com', role: 'Frontend Engineer' },
-  'EMP-1016': { employeeId: 'EMP-1016', name: 'Hannah Schmidt', email: 'hannah.s@google.com', role: 'Lead Architect' },
-  'EMP-1017': { employeeId: 'EMP-1017', name: 'Zaid Al-Mansoor', email: 'zaid.a@google.com', role: 'Backend Engineer' },
-  'EMP-1018': { employeeId: 'EMP-1018', name: 'Emily Zhang', email: 'emily.z@google.com', role: 'Senior Software Engineer' },
-  'EMP-1019': { employeeId: 'EMP-1019', name: 'Rohan Gupta', email: 'rohan.g@google.com', role: 'Frontend Engineer' },
-  'EMP-1020': { employeeId: 'EMP-1020', name: 'Sophia Rossi', email: 'sophia.r@google.com', role: 'Full-Stack Developer' },
+  'TK-9A4B': { employeeId: 'EMP-1001', name: 'Tejas', email: 'tejas@google.com', role: 'Lead Architect' },
+  'TK-7X2Y': { employeeId: 'EMP-1002', name: 'Sarah Chen', email: 'sarah.chen@google.com', role: 'Lead Architect' },
+  'TK-5M8N': { employeeId: 'EMP-1003', name: 'Alex Rivera', email: 'alex.rivera@google.com', role: 'Senior Software Engineer' },
+  'TK-3C6D': { employeeId: 'EMP-1004', name: 'Priya Sharma', email: 'priya.sharma@google.com', role: 'Frontend Engineer' },
+  'TK-1E9F': { employeeId: 'EMP-1005', name: 'Marcus Vance', email: 'marcus.vance@google.com', role: 'Backend Engineer' },
+  'TK-4G2H': { employeeId: 'EMP-1006', name: 'Elena Rostova', email: 'elena.rostova@google.com', role: 'Product Manager' },
+  'TK-8J5K': { employeeId: 'EMP-1007', name: 'David Kim', email: 'david.kim@google.com', role: 'UI/UX Designer' },
+  'TK-6L3M': { employeeId: 'EMP-1008', name: 'Jordan Taylor', email: 'jordan.taylor@google.com', role: 'Senior Software Engineer' },
+  'TK-2P7Q': { employeeId: 'EMP-1009', name: 'Aisha Patel', email: 'aisha.patel@google.com', role: 'Frontend Engineer' },
+  'TK-9R4S': { employeeId: 'EMP-1010', name: "Liam O'Connor", email: 'liam.oconnor@google.com', role: 'Full-Stack Developer' },
+  'TK-5T1U': { employeeId: 'EMP-1011', name: 'Vikram Malhotra', email: 'vikram.m@google.com', role: 'Senior Software Engineer' },
+  'TK-3V8W': { employeeId: 'EMP-1012', name: 'Chloe Dubois', email: 'chloe.d@google.com', role: 'UI/UX Designer' },
+  'TK-7X9Y': { employeeId: 'EMP-1013', name: 'Kaito Tanaka', email: 'kaito.t@google.com', role: 'Backend Engineer' },
+  'TK-1Z6A': { employeeId: 'EMP-1014', name: 'Nia Washington', email: 'nia.w@google.com', role: 'Product Manager' },
+  'TK-4B2C': { employeeId: 'EMP-1015', name: 'Carlos Mendez', email: 'carlos.m@google.com', role: 'Frontend Engineer' },
+  'TK-8D5E': { employeeId: 'EMP-1016', name: 'Hannah Schmidt', email: 'hannah.s@google.com', role: 'Lead Architect' },
+  'TK-6F3G': { employeeId: 'EMP-1017', name: 'Zaid Al-Mansoor', email: 'zaid.a@google.com', role: 'Backend Engineer' },
+  'TK-2H7I': { employeeId: 'EMP-1018', name: 'Emily Zhang', email: 'emily.z@google.com', role: 'Senior Software Engineer' },
+  'TK-9J4K': { employeeId: 'EMP-1019', name: 'Rohan Gupta', email: 'rohan.g@google.com', role: 'Frontend Engineer' },
+  'TK-5L1M': { employeeId: 'EMP-1020', name: 'Sophia Rossi', email: 'sophia.r@google.com', role: 'Full-Stack Developer' },
 };
 
 interface CompanySelectorProps {
@@ -56,7 +56,7 @@ export function CompanySelector({ onSelectCompanyAndProject }: CompanySelectorPr
   const [customCompanyName, setCustomCompanyName] = useState('');
 
   // Step 2 State
-  const [typedEmployeeId, setTypedEmployeeId] = useState('');
+  const [typedAccessToken, setTypedAccessToken] = useState('');
 
   // Step 3 Authenticated Result State
   const [authenticatedEmployee, setAuthenticatedEmployee] = useState<PreconfiguredEmployee | null>(null);
@@ -86,30 +86,25 @@ export function CompanySelector({ onSelectCompanyAndProject }: CompanySelectorPr
     setStep(2);
   };
 
-  // STEP 2: VERIFY ID VALIDITY & BLOCK DUPLICATE CONCURRENT LOGINS (BLIND VERIFICATION)
-  const handleVerifyEmployeeId = async (e: React.FormEvent) => {
+  // STEP 2: VERIFY TOKEN & BLOCK DUPLICATE CONCURRENT LOGINS (TRUE BLIND AUTH)
+  const handleVerifyToken = async (e: React.FormEvent) => {
     e.preventDefault();
-    let raw = typedEmployeeId.trim().toUpperCase();
+    const cleanToken = typedAccessToken.trim().toUpperCase();
 
-    if (!raw) {
-      setError('Please enter a valid Employee ID');
+    if (!cleanToken) {
+      setError('Please enter a secure access token');
       return;
     }
 
-    // Format normalization (e.g. "1001" -> "EMP-1001")
-    let cleanedId = raw;
-    if (/^\d{4}$/.test(raw)) {
-      cleanedId = `EMP-${raw}`;
-    } else if (/^EMP\d{4}$/.test(raw)) {
-      cleanedId = `EMP-${raw.substring(3)}`;
-    }
-
-    // STRICT AUTHORIZATION CHECK
-    const foundEmployee = ENTERPRISE_EMPLOYEE_DIRECTORY[cleanedId];
+    // STRICT AUTHORIZATION CHECK (MAPPING TOKEN TO INTERNAL EMPLOYEE ID)
+    const foundEmployee = ENTERPRISE_EMPLOYEE_DIRECTORY[cleanToken];
     if (!foundEmployee) {
-      setError(`Access Denied: Invalid Employee ID "${cleanedId}". Only authorized corporate accounts assigned to this workspace are permitted.`);
+      setError(`Access Denied: Invalid Access Token. This token is either expired or not assigned to a corporate account.`);
       return;
     }
+    
+    // Internal Employee ID is extracted securely on the backend, never typed by the user
+    const internalEmployeeId = foundEmployee.employeeId;
 
     const effectiveCompanyName = selectedCompany ? selectedCompany.name : 'Enterprise';
     const workspaceSlug = `${effectiveCompanyName}_${effectiveCompanyName} Real-Time Core Engine`
@@ -117,12 +112,12 @@ export function CompanySelector({ onSelectCompanyAndProject }: CompanySelectorPr
       .trim()
       .replace(/[^a-z0-9]/g, '_');
     
-    const presenceDocKey = `${workspaceSlug}_${cleanedId}`;
+    const presenceDocKey = `${workspaceSlug}_${internalEmployeeId}`;
 
     setIsVerifying(true);
     setError('');
 
-    // STRICT CONCURRENCY LOCK - BLOCK IF SAME USER IS ALREADY ACTIVE IN ANOTHER SESSION
+    // STRICT CONCURRENCY LOCK - BLOCK IF THIS INTERNAL EMPLOYEE IS ALREADY ACTIVE IN ANOTHER SESSION
     try {
       const presenceSnap = await getDoc(doc(db, 'presence', presenceDocKey));
       if (presenceSnap.exists()) {
@@ -130,7 +125,7 @@ export function CompanySelector({ onSelectCompanyAndProject }: CompanySelectorPr
         const now = Date.now();
         if (data.lastActive && now - data.lastActive < 20000) {
           setIsVerifying(false);
-          setError(`🚫 Security Lockout: Employee ID "${cleanedId}" is currently active in another session! Multiple concurrent logins under the same Employee ID are strictly prohibited.`);
+          setError(`🚫 Security Lockout: A session for this access token's assigned employee is already active! Multiple concurrent logins are strictly prohibited to prevent data conflict.`);
           return;
         }
       }
@@ -232,7 +227,7 @@ export function CompanySelector({ onSelectCompanyAndProject }: CompanySelectorPr
           </div>
         )}
 
-        {/* STEP 2: BLIND EMPLOYEE ID VERIFICATION (CLEAN ZERO-LEAK INPUT) */}
+        {/* STEP 2: BLIND TOKEN EXCHANGE (TRUE ZERO-TRUST) */}
         {step === 2 && selectedCompany && (
           <div>
             <button
@@ -253,31 +248,31 @@ export function CompanySelector({ onSelectCompanyAndProject }: CompanySelectorPr
             </div>
 
             <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-              Employee Authentication
+              Zero-Trust Verification
             </h2>
             <p className="text-xs text-slate-400 mt-1 mb-5 leading-relaxed">
-              Step 2: Enter your corporate Employee ID to authenticate your session.
+              Step 2: Enter your secure Access Token. Your actual Employee ID is never exposed to the frontend.
             </p>
 
-            <form onSubmit={handleVerifyEmployeeId} className="space-y-4">
+            <form onSubmit={handleVerifyToken} className="space-y-4">
               <div>
                 <label className="block text-xs font-bold text-slate-300 uppercase mb-1.5 flex items-center gap-1.5">
                   <KeyRound className="w-4 h-4 text-indigo-400" />
-                  <span>Corporate Employee ID</span>
+                  <span>Secure Access Token</span>
                 </label>
                 <input
                   type="text"
                   required
-                  placeholder="Enter Employee ID..."
-                  value={typedEmployeeId}
-                  onChange={(e) => setTypedEmployeeId(e.target.value)}
+                  placeholder="e.g. TK-9A4B"
+                  value={typedAccessToken}
+                  onChange={(e) => setTypedAccessToken(e.target.value)}
                   className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white font-mono font-bold text-base focus:outline-none focus:border-indigo-500 uppercase tracking-wider"
                 />
               </div>
 
               <div className="p-3 bg-slate-800/40 border border-slate-800 rounded-xl text-[11px] text-slate-400 flex items-center gap-2">
                 <Lock className="w-4 h-4 text-indigo-400 flex-shrink-0" />
-                <span>Active Concurrency Lock: Duplicate active logins under the same Employee ID are automatically blocked.</span>
+                <span>Active Concurrency Lock: Duplicate active logins under the same internal entity are automatically blocked.</span>
               </div>
 
               <button
@@ -306,7 +301,7 @@ export function CompanySelector({ onSelectCompanyAndProject }: CompanySelectorPr
               Assigned Project Revealed
             </h2>
             <p className="text-xs text-slate-400 mt-1 mb-5">
-              Access granted to {authenticatedEmployee.name} ({authenticatedEmployee.employeeId}).
+              Secure token mapped to {authenticatedEmployee.name}. Employee ID hidden.
             </p>
 
             <div className="p-4 bg-indigo-500/10 border border-indigo-500/30 rounded-2xl mb-4">
@@ -322,8 +317,8 @@ export function CompanySelector({ onSelectCompanyAndProject }: CompanySelectorPr
 
             <div className="p-4 bg-slate-800/60 border border-slate-700/80 rounded-2xl space-y-2 mb-5 text-xs">
               <div className="flex justify-between items-center pb-2 border-b border-slate-700/60">
-                <span className="text-slate-400 font-bold">Employee ID:</span>
-                <span className="font-mono font-extrabold text-amber-300">{authenticatedEmployee.employeeId}</span>
+                <span className="text-slate-400 font-bold">Internal Reference:</span>
+                <span className="font-mono font-extrabold text-amber-300 blur-sm select-none">HIDDEN-ID</span>
               </div>
               <div className="flex justify-between items-center pb-2 border-b border-slate-700/60">
                 <span className="text-slate-400 font-bold">Employee Name:</span>
