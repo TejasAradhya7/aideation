@@ -17,14 +17,44 @@ Key goals:
 ## 8-Step Architecture
 
 ```mermaid
-graph TD
-    A["1. User Authentication (Blind Login)<br/>Client exchanges token securely"] --> B["2. Firestore Security Rules<br/>Validates read/write & prevents duplicate EMPID"]
-    B --> C["3. Presence Service<br/>Writes temp doc, TTL lock-out"]
-    C --> D["4. Realtime Document Hook<br/>Sets up listener & merges updates"]
-    D --> E["5. Task Sync Hook<br/>Batches local edits atomically"]
-    E --> F["6. ID Sanitisation Layer<br/>Slugifies IDs to avoid path errors"]
-    F --> G["7. Frontend UI<br/>Consumes hooks, premium glass-morphism"]
-    G --> H["8. Deployment & CI<br/>Vite bundled, static host, Oxlint CI"]
+flowchart TB
+    %% Styling Definitions
+    classDef client fill:#f3f4f6,stroke:#6366f1,stroke-width:2px,color:#1f2937,rx:8px,ry:8px
+    classDef cloud fill:#fffbeb,stroke:#f59e0b,stroke-width:2px,color:#1f2937,rx:8px,ry:8px
+    classDef db fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,color:#1f2937
+    classDef ci fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,color:#1f2937,rx:8px,ry:8px
+
+    subgraph Client [🖥️ Client Side / React UI]
+        direction TB
+        A(["1. User Auth (Blind Login)<br><i>Secure token exchange</i>"]):::client
+        G(["7. Frontend UI<br><i>Glass-morphism & UI checks</i>"]):::client
+        D(["4. Realtime Doc Hook<br><i>Listener & auto-merge</i>"]):::client
+        E(["5. Task Sync Hook<br><i>Atomic batch edits</i>"]):::client
+        F(["6. ID Sanitisation<br><i>Slugify to prevent errors</i>"]):::client
+        
+        A --> G
+        G --> D
+        G --> E
+        D -.-> F
+        E -.-> F
+    end
+
+    subgraph Firebase [☁️ Firebase Backend]
+        direction TB
+        B{"2. Security Rules<br><i>Validate EMPID & access</i>"}:::cloud
+        C[("3. Presence Service<br><i>TTL lock-out for duplicates</i>")]:::db
+        
+        B --> C
+    end
+
+    subgraph Deployment [🚀 CI/CD Pipeline]
+        H(["8. Deployment & CI<br><i>Vite + Oxlint formatting</i>"]):::ci
+    end
+
+    %% Connections across systems
+    F ==>|Write Operations| B
+    C ==>|Live Stream| D
+    H ===>|Deploys to| G
 ```
 
 ## Features
